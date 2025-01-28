@@ -1,0 +1,243 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Mitr', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+}
+
+
+.logo {
+    color: #fff;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 35px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: rgb(52, 138, 59);
+}
+
+#menu-icon {
+    font-size: 36px;
+    color: #fff;
+    display: none;
+}
+
+/* เปลี่ยนสีเมื่อมีการเลื่อน */
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.678); /* สีใหม่สำหรับ header เมื่อเลื่อน */
+}
+
+.navbar.scrolled a {
+    color: #000000; /* เปลี่ยนสีของลิงค์ใน navbar เมื่อเลื่อน */
+}
+
+.navbar.scrolled a:hover {
+    color: rgb(26, 121, 30); /* สี hover สำหรับลิงค์ */
+}
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video-background .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+.video-background .video-label {
+    position: absolute;
+    top: 20%; /* Adjust the position based on where you want it */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    z-index: 10; /* Ensures the label is above the video */
+}
+
+.video-background .video-label h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.video-background .video-label p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* ใช้ความสูงเต็มหน้าจอ */
+    background-image: url('background.jpg'); /* ใส่เส้นทางของภาพ */
+    background-size: cover; /* ทำให้ภาพครอบคลุมพื้นที่ทั้งหมด */
+    background-position: center; /* จัดภาพให้อยู่ตรงกลาง */
+}
+
+.background .label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 10; /* เพื่อให้ label อยู่บนพื้นหลัง */
+}
+
+.background .label h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.background .label p {
+    font-size: 1.5rem;
+}
+
+.background .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* สีทึบๆ เพื่อให้ข้อความเห็นชัดขึ้น */
+    z-index: 5; /* ให้ overlay อยู่เหนือพื้นหลัง */
+}
+
+main {
+    padding: 4rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    color: #2ecc71;
+}
+
+footer {
+    background-color: #2ecc71;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-buttons a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+@media (max-width: 768px) {
+    .header{
+        padding: 20px 50px;
+    }
+    #menu-icon {
+      display: block;
+    }
+    .navbar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0.5em 4%;
+      display: none;
+    }
+    .navbar.active {
+      display: block;
+    }
+    .navbar a {
+      display: block;
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+      
+
+    }
+    .nav-bg {
+      position: absolute;
+      top: 79px;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      z-index: -1;
+      display: none;
+    }
+    .nav-bg.active {
+      display: block;
+    }
+    .nav-bg.active.scrolled {
+        background: rgba(255, 255, 255, 0.678); /* สีใหม่สำหรับ header เมื่อเลื่อน */
+    }
+    body {
+        overflow-x: hidden;
+    }
+
+  }
+
