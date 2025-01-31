@@ -94,28 +94,91 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
 }
 .video-background .video-label {
     position: absolute;
-    top: 20%; /* Adjust the position based on where you want it */
+    top: 20%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* แก้ไขให้คงที่ */
     color: #fff;
     text-align: center;
-    z-index: 10; /* Ensures the label is above the video */
+    z-index: 10;
+    opacity: 0; /* ซ่อนข้อความก่อน */
+    animation: fadeInUpLabel 0.5s ease-out forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUpLabel {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px); /* เลื่อนขึ้นจากด้านล่าง */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
 .video-background .video-label h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    
+    font-size: 8rem;
+    margin-bottom: 0.2rem;
     color: #fff;
 }
 
 .video-background .video-label p {
-    font-size: 1.5rem;
+    margin-top: 0;
+    font-size: 1.95rem;
     margin-bottom: 0;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    opacity: 0; /* ซ่อนข้อความก่อน */
+    animation: fadeInText 1s ease-out 0.5s forwards; /* ปรับดีเลย์ให้ตรงกับ fadeInUpLabel */
 }
+
+/* เส้นใต้สีเขียว */
+.video-background .video-label p::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #2ecc71;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+
+    /* Animation effect */
+    transform: scaleX(0); 
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* ทำให้เส้นใต้ค่อยๆ ปรากฏเมื่อมองเห็น */
+.video-background .video-label p::after {
+    animation: underlineGrow 1s ease-out 1s forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes underlineGrow {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
 
 .background {
     position: relative;
@@ -163,10 +226,60 @@ main {
 section {
     margin-bottom: 2rem;
 }
-
-h1, h2 {
-    color: #2ecc71;
+.section-why {
+    text-align: center; /* ทำให้ h1 อยู่ตรงกลาง */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
+
+/* เมื่อ section ปรากฏบนหน้าจอ */
+.section-why.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.section-why h1{
+    font-family: "Libre Franklin", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 5rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    display: inline-block; /* ทำให้เส้นใต้พอดีกับข้อความ */
+    position: relative;
+}
+
+/* เส้นใต้สีเขียว */
+.section-why h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #2ecc71;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+
+    /* Animation effect */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease-out 0.5s;
+}
+
+/* เมื่อ section ปรากฏบนหน้าจอ */
+.section-why.show h1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-why.show h1::after {
+    transform: scaleX(1);
+}
+
+
 
 footer {
     background-color: #2ecc71;
