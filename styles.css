@@ -234,7 +234,7 @@ body {
     position: relative;
     width: 100%;
     height: 50vh; /* ใช้ความสูงเต็มหน้าจอ */
-    background-image: url('background.jpg'); /* ใส่เส้นทางของภาพ */
+    background-image: url('/images/background.jpg'); /* ใส่เส้นทางของภาพ */
     background-size: cover; /* ทำให้ภาพครอบคลุมพื้นที่ทั้งหมด */
     background-position: center; /* จัดภาพให้อยู่ตรงกลาง */
 }
@@ -290,6 +290,7 @@ section {
     max-width: 1200px;
     width: 90%;
     gap: 40px;
+    
 }
 
 /* Infographic */
@@ -299,7 +300,7 @@ section {
 }
 
 .info-graphic img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -339,6 +340,160 @@ section {
     transform: scale(1);
     transform: translateY(0);
 }
+.section-structure {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section-structure ul{
+    font-size: 1.2rem; /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้น */
+}
+
+/* Animation เมื่อ Section ปรากฏ */
+.section-structure.show .info-graphic img,
+.section-structure.show .info-content h1,
+.section-structure.show .info-content p {
+    opacity: 1;
+    transform: scale(1);
+    transform: translateY(0);
+}
+
+/* Animation สำหรับ ul */
+.section-structure.show .info-content ul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation ให้ <li> ค่อยๆ ปรากฏทีละรายการ */
+.section-structure.show .info-content ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInList 0.5s ease-out forwards;
+}
+
+/* กำหนดให้แต่ละ <li> แสดงขึ้นมาทีละอัน */
+.section-structure.show .info-content ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.section-structure.show .info-content ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.section-structure.show .info-content ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.section-structure.show .info-content ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+.section-structure.show .info-content ul li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+/*benefits*/
+/* Animation เมื่อ Section ปรากฏ */
+.section-benefits.show .info-graphic img,
+.section-benefits.show .info-content h1,
+.section-benefits.show .info-content p {
+    opacity: 1;
+    transform: scale(1);
+    transform: translateY(0);
+}
+
+/* Animation สำหรับ ul */
+.section-benefits.show .info-content ul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation ให้ <li> ค่อยๆ ปรากฏทีละรายการ */
+.section-benefits.show .info-content ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInList 0.5s ease-out forwards;
+}
+
+/* กำหนดให้แต่ละ <li> แสดงขึ้นมาทีละอัน */
+.section-benefits.show .info-content ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.section-benefits.show .info-content ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.section-benefits.show .info-content ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.section-benefits.show .info-content ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.section-benefits.show .info-content ul li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.section-benefits.show .info-content ul li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+/* Keyframe สำหรับ fade-in effect */
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-benefits ul {
+    font-size: 1.2rem;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    line-height: 1.6;
+}
+.section-benefits {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-benefits ul li {
+    margin-bottom: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+.section-benefits ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Keyframe Animation */
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 
 
