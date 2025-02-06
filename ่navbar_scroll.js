@@ -15,3 +15,17 @@ window.addEventListener('scroll', () => {
         
     }
 });
+
+
+window.addEventListener("scroll", function () {
+    let header = document.querySelector(".header");
+    let logo = document.getElementById("logo");
+
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+        logo.src = "images/logo-black.png"; // เปลี่ยนเป็นโลโก้สีดำ
+    } else {
+        header.classList.remove("scrolled");
+        logo.src = "images/logo-white.png"; // กลับเป็นโลโก้สีขาว
+    }
+});
