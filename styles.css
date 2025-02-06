@@ -242,7 +242,6 @@ section {
     transform: translateY(0);
 }
 .section-why h1{
-    font-family: "Libre Franklin", serif;
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
@@ -388,23 +387,6 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-@media (max-width: 1043px) {
-    .video-background .video-label h1 {
-        font-size: 2.7rem;
-    }
-    .video-background .video-label p {
-        font-size: 1.0rem;
-    }
-    .video-background .video-label{
-        top: 30%;
-    }
-    .video-background img{
-        height: 100vh;
-        width: 100vw;
-        object-fit: cover;
-    }
-}
 @media (max-width: 768px) {
     .header{
         padding: 20px 50px;
@@ -455,6 +437,22 @@ footer {
     .team-box{
         display: block;
     }
-
+    .video-background .video-label h1 {
+        font-size: 2.7rem;
+    }
+    .video-background .video-label p {
+        font-size: 1.0rem;
+    }
+    .video-background .video-label{
+        top: 30%;
+    }
+    .video-background img{
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+    }
+    .section-why h1{
+        font-size: 3rem;
+    }
   }
 
