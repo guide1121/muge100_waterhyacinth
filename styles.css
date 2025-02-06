@@ -729,7 +729,7 @@ footer {
         height: 45px; /* แท็บเล็ต */
     }
     .header.scrolled .logo img {
-        height: 35px;
+        height: 45px;
     }
     
 }
@@ -738,7 +738,7 @@ footer {
         height: 40px; /* มือถือแนวนอน */
     }
     .header.scrolled .logo img {
-        height: 30px;
+        height: 40px;
     }
     .container {
         flex-direction: column;
@@ -872,6 +872,6 @@ footer {
         height: 35px; /* มือถือแนวตั้ง */
     }
     .header.scrolled .logo img {
-        height: 28px;
+        height: 35px;
     }
 }
