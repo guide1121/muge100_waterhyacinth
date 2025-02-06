@@ -698,5 +698,21 @@ footer {
         display: block;
         margin: 0 auto; /* จัดรูปภาพให้อยู่ตรงกลาง */
     }
+    /* ปรับขนาดตัวอักษร และระยะห่างในทุก Section */
+    .section-why .info-content h1,
+    .section-structure .info-content h1,
+    .section-benefits .info-content h1 {
+        font-size: 2rem; /* ขนาดตัวอักษรลดลง */
+        text-align: center;
+    }
+
+    .section-why .info-content p,
+    .section-structure .info-content p,
+    .section-benefits .info-content p,
+    .section-why .info-content ul li,
+    .section-structure .info-content ul li,
+    .section-benefits .info-content ul li {
+        font-size: 1rem; /* ลดขนาดฟอนต์ให้อ่านง่ายขึ้น */
+    }
   }
 
