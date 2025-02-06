@@ -28,7 +28,8 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .logo img {
-    height: 85px;
+    height: 50px;
+    max-width: 100%;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -724,12 +725,21 @@ footer {
 
 
 @media (max-width: 1024px) {
-    .team-box {
-        grid-template-columns: repeat(2, 1fr);
+    .logo img {
+        height: 45px; /* แท็บเล็ต */
+    }
+    .header.scrolled .logo img {
+        height: 35px;
     }
     
 }
 @media (max-width: 768px) {
+    .logo img {
+        height: 40px; /* มือถือแนวนอน */
+    }
+    .header.scrolled .logo img {
+        height: 30px;
+    }
     .container {
         flex-direction: column;
         padding: 0 10px; /* ลดระยะห่างขอบ */
@@ -855,5 +865,13 @@ footer {
     .section-impact ul {
         font-size: 1rem;
     }
+    
   }
-
+  @media screen and (max-width: 480px) {
+    .logo img {
+        height: 35px; /* มือถือแนวตั้ง */
+    }
+    .header.scrolled .logo img {
+        height: 28px;
+    }
+}
