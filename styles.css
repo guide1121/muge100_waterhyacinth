@@ -159,7 +159,9 @@ body {
 .video-background .video-label p::after {
     animation: underlineGrow 1s ease-out 1s forwards;
 }
-
+.video-background img{
+    height: 100vh;
+}
 /* Keyframes */
 @keyframes fadeInText {
     from {
@@ -379,12 +381,27 @@ footer {
     color: #ff00ae;
 }
 
+
 @media (max-width: 1024px) {
     .team-box {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+@media (max-width: 1043px) {
+    .video-background .video-label h1 {
+        font-size: 3rem;
+    }
+    .video-background .video-label p {
+        font-size: 1.0rem;
+    }
+    .video-background .video-label{
+        top: 30%;
+    }
+    .video-background img{
+        height: 100vh;
+    }
+}
 @media (max-width: 768px) {
     .header{
         padding: 20px 50px;
