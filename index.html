@@ -40,9 +40,9 @@
             <div class="container">
                 <!-- Infographic -->
                 <div class="info-graphic">
-                    <img src="images/Info1.png" alt="Infographic ผักตบชวา">
+                    <img src="images/Info1.png" alt="Infographic ผักตบชวา" class="popup-img" onclick="openPopup(this)">
                 </div>
-                
+        
                 <!-- เนื้อหา -->
                 <div class="info-content">
                     <h1>ผักตบชวา คืออะไร?</h1>
@@ -52,6 +52,7 @@
                 </div>
             </div>
         </section>
+        
         <section class="section-structure">
             <div class="container">
                 <!-- เนื้อหา -->
@@ -67,15 +68,16 @@
                 </div>
                 <!-- Infographic -->
                 <div class="info-graphic">
-                    <img src="images/structure.png" alt="โครงสร้างผักตบชวา">
+                    <img src="images/structure.png" alt="โครงสร้างผักตบชวา" class="popup-img" onclick="openPopup(this)">
                 </div>
             </div>
         </section>
+        
         <section class="section-benefits">
             <div class="container">
                 <!-- Infographic -->
                 <div class="info-graphic">
-                    <img src="images/benefits.png" alt="การใช้ประโยชน์จากผักตบชวา">
+                    <img src="images/benefits.png" alt="การใช้ประโยชน์จากผักตบชวา" class="popup-img" onclick="openPopup(this)">
                 </div>
         
                 <!-- เนื้อหา -->
@@ -93,7 +95,33 @@
             </div>
         </section>
         
-
+        <section class="section-impact">
+            <div class="container">
+                <!-- เนื้อหา -->
+                <div class="info-content">
+                    <h1>ผลกระทบจากการแพร่กระจายของผักตบชวา</h1>
+                    <ul>
+                        <li><strong>การคมนาคม:</strong> ขัดขวางการเดินเรือและการสัญจรทางน้ำ</li>
+                        <li><strong>การเกษตร:</strong> แย่งสารอาหารจากพืชท้องถิ่น และเป็นแหล่งเพาะพันธุ์ของศัตรูพืช เช่น หอยเชอรี่</li>
+                        <li><strong>การประมง:</strong> ลดออกซิเจนในน้ำ บดบังแสงแดด ส่งผลกระทบต่อระบบนิเวศ และเป็นอุปสรรคต่อการจับปลา</li>
+                        <li><strong>สาธารณสุข:</strong> เป็นแหล่งเพาะพันธุ์ของยุงลาย ซึ่งเป็นพาหะของโรค</li>
+                        <li><strong>ชลประทาน:</strong> กีดขวางทางน้ำ ทำให้ระบายน้ำช้าลง เพิ่มความเสี่ยงต่อน้ำท่วม</li>
+                        <li><strong>การเน่าเสียของแหล่งน้ำ:</strong> การทับถมของผักตบชวาทำให้แหล่งน้ำตื้นเขิน และเกิดน้ำเน่าเสีย</li>
+                    </ul>
+                </div>
+                <!-- Infographic -->
+                <div class="info-graphic">
+                    <img src="images/problem.png" alt="ผลกระทบของผักตบชวา" class="popup-img" onclick="openPopup(this)">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Popup Viewer -->
+        <div id="imagePopup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img class="popup-content" id="popupImage">
+        </div>
+        
     </main>
 
     

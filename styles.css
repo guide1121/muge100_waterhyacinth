@@ -481,6 +481,96 @@ section {
     font-weight: bold;
 }
 
+/*impact*/
+/* Animation เมื่อ Section ปรากฏ */
+.section-impact.show .info-graphic img,
+.section-impact.show .info-content h1,
+.section-impact.show .info-content p {
+    opacity: 1;
+    transform: scale(1);
+    transform: translateY(0);
+}
+
+/* Animation สำหรับ ul */
+.section-impact.show .info-content ul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation ให้ <li> ค่อยๆ ปรากฏทีละรายการ */
+.section-impact.show .info-content ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInList 0.5s ease-out forwards;
+}
+
+/* กำหนดให้แต่ละ <li> แสดงขึ้นมาทีละอัน */
+.section-impact.show .info-content ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.section-impact.show .info-content ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.section-impact.show .info-content ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.section-impact.show .info-content ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.section-impact.show .info-content ul li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.section-impact.show .info-content ul li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+/* Keyframe สำหรับ fade-in effect */
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-impact ul {
+    font-size: 1.2rem;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    line-height: 1.6;
+}
+.section-impact {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-impact ul li {
+    margin-bottom: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+.section-impact ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
 /* Keyframe Animation */
 @keyframes fadeInList {
     from {
@@ -494,7 +584,36 @@ section {
 }
 
 
+/* Popup Container */
+.popup {
+    display: none; /* ซ่อนเริ่มต้น */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
 
+/* รูปภาพใน Popup */
+.popup-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* ปุ่มปิด Popup */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
 
 
 footer {
@@ -717,6 +836,16 @@ footer {
     .section-structure .info-content ul li,
     .section-benefits .info-content ul li {
         font-size: 1rem; /* ลดขนาดฟอนต์ให้อ่านง่ายขึ้น */
+    }
+    .popup-overlay img {
+        max-width: 95%;
+        max-height: 80%;
+    }
+    .section-impact {
+        padding: 50px 20px;
+    }
+    .section-impact ul {
+        font-size: 1rem;
     }
   }
 
