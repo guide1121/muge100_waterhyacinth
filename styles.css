@@ -161,6 +161,7 @@ body {
 }
 .video-background img{
     height: 100vh;
+    width: 100vw;
 }
 /* Keyframes */
 @keyframes fadeInText {
@@ -390,7 +391,7 @@ footer {
 
 @media (max-width: 1043px) {
     .video-background .video-label h1 {
-        font-size: 3rem;
+        font-size: 2.85rem;
     }
     .video-background .video-label p {
         font-size: 1.0rem;
