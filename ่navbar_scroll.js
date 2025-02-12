@@ -29,3 +29,15 @@ window.addEventListener("scroll", function () {
         logo.src = "images/logo-white.png"; // กลับเป็นโลโก้สีขาว
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let surveyBtn = document.getElementById("surveyBtn");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+            surveyBtn.classList.add("show");
+        } else {
+            surveyBtn.classList.remove("show");
+        }
+    });
+});

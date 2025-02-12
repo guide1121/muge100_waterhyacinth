@@ -754,6 +754,54 @@ section {
 #goToTopBtn:hover {
     background-color: #0fb300;
 }
+/* ปุ่มแบบสอบถาม */
+#surveyBtn {
+    position: fixed;
+    bottom: 90px; /* ให้ไม่ทับกับปุ่ม Go to Top */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0; /* ซ่อนปุ่มตอนเริ่ม */
+    visibility: hidden;
+}
+#surveyBtn:hover {
+    background-color: #218838;
+}
+/* เมื่อแสดงปุ่ม */
+#surveyBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+.tooltip {
+    position: absolute;
+    right: 60px; /* ให้แสดงทางซ้ายของปุ่ม */
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* แสดง Tooltip เมื่อ hover */
+#surveyBtn:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Popup Container */
 .popup {
     display: none; /* ซ่อนเริ่มต้น */
@@ -1081,6 +1129,14 @@ footer {
         height: 45px;
         font-size: 22px;
     }
+    #surveyBtn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+    .tooltip {
+        font-size: 12px;
+    }
     
   }
   @media screen and (max-width: 480px) {
@@ -1129,5 +1185,13 @@ footer {
         width: 40px;
         height: 40px;
         font-size: 20px;
+    }
+    #surveyBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .tooltip {
+        font-size: 10px;
     }
 }
