@@ -592,7 +592,168 @@ section {
     }
 }
 
+/* Prevention Section */
+/* Animation เมื่อ Section ปรากฏ */
+.section-prevention.show .info-graphic img,
+.section-prevention.show .info-content h1,
+.section-prevention.show .info-content p {
+    opacity: 1;
+    transform: scale(1);
+    transform: translateY(0);
+}
 
+/* Animation สำหรับ ul */
+.section-prevention.show .info-content ul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation ให้ <li> ค่อยๆ ปรากฏทีละรายการ */
+.section-prevention.show .info-content ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInList 0.5s ease-out forwards;
+}
+
+/* กำหนดให้แต่ละ <li> แสดงขึ้นมาทีละอัน */
+.section-prevention.show .info-content ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.section-prevention.show .info-content ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.section-prevention.show .info-content ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.section-prevention.show .info-content ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.section-prevention.show .info-content ul li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.section-prevention.show .info-content ul li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.section-prevention.show .info-content ul li:nth-child(7) {
+    animation-delay: 1.4s;
+}
+
+/* Keyframe สำหรับ fade-in effect */
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-prevention {
+    background-color: #f4f4f4;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-prevention ul {
+    font-size: 1.2rem;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+.section-prevention ul li {
+    margin-bottom: 10px;
+    list-style: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+.section-prevention ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.table-of-contents {
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px; /* เว้นระยะจากเนื้อหาด้านล่าง */
+    border-radius: 8px;
+    font-family: 'Mitr', sans-serif;
+}
+
+.table-of-contents h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.table-of-contents ul li {
+    display: inline;
+}
+
+.table-of-contents ul li a {
+    text-decoration: none;
+    color: #3cc222;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.table-of-contents ul li a:hover {
+    color: #00b309;
+}
+#goToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #33ff00;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* แสดงปุ่มเมื่อเลื่อนลง */
+#goToTopBtn.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+#goToTopBtn:hover {
+    background-color: #0fb300;
+}
 /* Popup Container */
 .popup {
     display: none; /* ซ่อนเริ่มต้น */
@@ -915,6 +1076,11 @@ footer {
     .section-impact ul {
         font-size: 1rem;
     }
+    #goToTopBtn {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
     
   }
   @media screen and (max-width: 480px) {
@@ -941,5 +1107,27 @@ footer {
     }
     .box span {
         font-size: 13px;
+    }
+    .table-of-contents {
+        padding: 10px;
+    }
+
+    .table-of-contents ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .table-of-contents ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: white;
+        border: 1px solid #007bff;
+    }
+    #goToTopBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
     }
 }

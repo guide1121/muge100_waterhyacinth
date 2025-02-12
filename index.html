@@ -28,6 +28,7 @@
         <div class="nav-bg"></div>
     </header>
     
+
     
 
     <div class="video-background">
@@ -39,7 +40,17 @@
         <div class="overlay"></div>
     </div>
     <main>
-        <section class="section-why">
+        <div class="table-of-contents">
+            <h2>สารบัญ</h2>
+            <ul>
+                <li><a href="#why">ผักตบชวาคืออะไร?</a></li>
+                <li><a href="#structure">โครงสร้าง</a></li>
+                <li><a href="#benefits">การใช้ประโยชน์</a></li>
+                <li><a href="#impact">ผลกระทบ</a></li>
+                <li><a href="#prevention">การป้องกัน</a></li>
+            </ul>
+        </div>
+        <section id = "why" class="section-why">
             <div class="container">
                 <!-- Infographic -->
                 <div class="info-graphic">
@@ -56,7 +67,7 @@
             </div>
         </section>
         
-        <section class="section-structure">
+        <section id = "structure" class="section-structure">
             <div class="container">
                 <!-- เนื้อหา -->
                 <div class="info-content">
@@ -76,7 +87,7 @@
             </div>
         </section>
         
-        <section class="section-benefits">
+        <section id = "benefits" class="section-benefits">
             <div class="container">
                 <!-- Infographic -->
                 <div class="info-graphic">
@@ -98,7 +109,7 @@
             </div>
         </section>
         
-        <section class="section-impact">
+        <section id = "impact" class="section-impact">
             <div class="container">
                 <!-- เนื้อหา -->
                 <div class="info-content">
@@ -118,12 +129,36 @@
                 </div>
             </div>
         </section>
-        
+        <section id ="prevention" class="section-prevention">
+            <div class="container">
+                 <!-- Infographic -->
+                 <div class="info-graphic">
+                    <img src="images/prevention.jpg" alt="การป้องกันการระบาดของผักตบชวา" class="popup-img" onclick="openPopup(this)">
+                </div>
+                <!-- เนื้อหา -->
+                <div class="info-content">
+                    <h1>การป้องกันการระบาดของผักตบชวา</h1>
+                    <ul>
+                        <li><strong>ควบคุมการแพร่กระจาย:</strong> หมั่นลอกคูคลองให้มีน้ำไหลเวียน ผักตบชวาจะเติบโตได้ยากในน้ำที่ไหลแรง</li>
+                        <li><strong>ตรวจสอบแหล่งน้ำ:</strong> หากพบผักตบชวา ให้กำจัดโดยดึงขึ้นจากน้ำ ตากแห้ง และเผาทำลาย</li>
+                        <li><strong>ให้ความรู้:</strong> แนะนำผู้ที่ปลูกหรือกักตุนผักตบชวาให้เข้าใจโทษ และร่วมมือกันกำจัด</li>
+                        <li><strong>แจ้งหน่วยงาน:</strong> หากพบแหล่งเพาะพันธุ์ขนาดใหญ่ ให้แจ้งผู้นำชุมชนเพื่อช่วยกันกำจัด</li>
+                        <li><strong>สร้างรายได้:</strong> จ้างคนท้องถิ่นเก็บผักตบชวา เป็นการกระจายรายได้สู่ชุมชน</li>
+                        <li><strong>ใช้ประโยชน์:</strong> แปรรูปเป็นปุ๋ย ปรับปรุงคุณภาพดิน หรือทำผลิตภัณฑ์จักสาน</li>
+                        <li><strong>จัดการขนย้าย:</strong> หน่วยงานท้องถิ่นควรจัดหาพื้นที่รองรับการกำจัดอย่างเป็นระบบ</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
         <!-- Popup Viewer -->
         <div id="imagePopup" class="popup">
             <span class="close" onclick="closePopup()">&times;</span>
             <img class="popup-content" id="popupImage">
         </div>
+        <button id="goToTopBtn" title="Go to Top">
+            <i class='bx bx-chevron-up'></i>
+        </button>
         
     </main>
 
