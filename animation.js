@@ -180,3 +180,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY; // ตำแหน่งที่เลื่อน
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight; // ความสูงทั้งหมดของหน้าเว็บ
+    const progress = (scrollPosition / docHeight) * 100; // คำนวณเปอร์เซ็นต์ที่เลื่อน
+    document.getElementById('progress-bar').style.width = progress + '%'; // อัพเดทความกว้างของ progress bar
+});
