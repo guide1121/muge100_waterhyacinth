@@ -79,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(section);
 });
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const section = document.querySelector(".section-prevention");
 
@@ -95,6 +97,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(section);
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const section = document.querySelector(".section-removal");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    section.classList.add("show");
+                }
+            });
+        },
+        { threshold: 0.3 }
+    );
+
+    observer.observe(section);
+});
+
 
 // ฟังก์ชันเปิด Popup พร้อมโหลดรูปที่คลิก
 function openPopup(imgElement) {
