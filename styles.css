@@ -697,6 +697,8 @@ section {
     font-family: 'Mitr', sans-serif;
 }
 
+
+
 .table-of-contents h2 {
     font-size: 20px;
     margin-bottom: 10px;
@@ -954,8 +956,87 @@ section {
     font-weight: bold;
     margin-top: 10px;
 }
+/* Section: การนำผักตบชวามาใช้ประโยชน์ผ่านการจักสาน */
+.section-utilization {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
 
+.section-utilization.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
+.section-utilization .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+
+.section-utilization h1 {
+    font-size: 2rem;
+    color: #2c6e49;
+    margin-bottom: 20px;
+}
+
+.info-content p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* เมื่อ .show class ถูกเพิ่มให้แสดงข้อความ */
+.section-utilization.show .info-content p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* รูปภาพจักสาน */
+.utilization-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* ทำให้รูปภาพจัดเรียงได้ในหลายแถว */
+}
+
+.utilization-images img {
+    width: 150px; /* เพิ่มขนาดรูปภาพให้ใหญ่ขึ้น */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* เมื่อ .show class ถูกเพิ่มให้แสดงรูปภาพ */
+.section-utilization.show .utilization-images img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation ให้แต่ละภาพปรากฏทีละรายการ */
+.section-utilization .utilization-images img:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.section-utilization .utilization-images img:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.section-utilization .utilization-images img:nth-child(3) {
+    transition-delay: 0.6s;
+}
 /* รูปภาพใน Popup */
 .popup-content {
     max-width: 90%;
@@ -1297,7 +1378,27 @@ footer {
     .chemical-images img {
         width: 80px;
     }
-    
+    .section-utilization h1 {
+        font-size: 1.5rem; /* ลดขนาดหัวข้อในมือถือ */
+    }
+
+    .info-content p {
+        font-size: 1rem; /* ลดขนาดข้อความในมือถือ */
+        margin-bottom: 20px;
+    }
+
+    .utilization-images {
+        gap: 10px; /* ลดช่องว่างระหว่างภาพ */
+    }
+
+    .utilization-images img {
+        width: 80px; /* ลดขนาดภาพ */
+    }
+    /* ปิดกรอบฟ้าของลิงก์ทั้งหมดใน table of contents */
+.table-of-contents a {
+    outline: none; /* ปิดกรอบ */
+    -webkit-tap-highlight-color: transparent; /* ปิดการไฮไลต์เมื่อสัมผัสบนอุปกรณ์มือถือ */
+}
   }
   @media screen and (max-width: 480px) {
     .logo img {
@@ -1338,8 +1439,6 @@ footer {
         display: block;
         width: 100%;
         text-align: center;
-        background-color: white;
-        border: 1px solid #007bff;
     }
     #goToTopBtn {
         width: 40px;
@@ -1353,5 +1452,21 @@ footer {
     }
     .tooltip {
         font-size: 10px;
+    }
+    .section-utilization h1 {
+        font-size: 1.2rem; /* ลดขนาดหัวข้อในมือถือที่มีหน้าจอเล็ก */
+    }
+
+    .info-content p {
+        font-size: 0.9rem; /* ลดขนาดข้อความ */
+        margin-bottom: 15px;
+    }
+
+    .utilization-images {
+        gap: 5px; /* ลดช่องว่างระหว่างภาพ */
+    }
+
+    .utilization-images img {
+        width: 100px; /* ลดขนาดภาพ */
     }
 }
